@@ -1,7 +1,15 @@
+const Discord = require("discord.js");
+
 module.exports = {
 	name: 'interactionCreate',
+    /**
+     * 
+     * @param {Discord.Client} client 
+     * @param {Discord.Interaction} i 
+     * @returns 
+     */
 	async execute(client, i) {
-		if (i.isCommand()) {
+		if (i.isCommand() || i.isAutocomplete()) {
             let command = client.commands.get(i.commandName);
             if (!command) return;
             try {
