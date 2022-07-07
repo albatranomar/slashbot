@@ -6,10 +6,11 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Replies with Pong! wow'),
 		/**
-		 * 
-		 * @param {Discord.Interaction<Discord.CacheType} interaction 
-		 */
-	async execute(interaction) {
+         * 
+         * @param {Discord.Interaction<Discord.CacheType} interaction 
+         * @param {Discord.Client} client 
+         */
+	async execute(interaction, c) {
 		await interaction.reply('Pong!');
 	},
 };
